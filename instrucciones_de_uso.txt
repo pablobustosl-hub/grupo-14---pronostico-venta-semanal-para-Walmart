@@ -1,0 +1,86 @@
+===============================================================================
+INSTRUCCIONES DE USO Y REQUISITOS DEL PROYECTO
+===============================================================================
+
+1. ¿QUÉ SE NECESITA? (REQUISITOS PREVIOS)
+--------------------------------------------
+- Entorno: R (Versión 4.0.0 o superior).
+- Paquetes de R requeridos:
+  * Procesamiento: data.table, dplyr, lubridate, readr
+  * Modelado e inferencia: ranger, glmnet, sandwich, lmtest, car
+  * Visualización: ggplot2, gridExtra
+- Archivos de datos requeridos en la carpeta 'datos/':
+  * train.csv
+  * features.csv
+  * stores.csv
+
+2. ¿CÓMO SE USA? (PASO A PASO)
+--------------------------------------------
+Paso 1: Descargar/Descomprimir la carpeta raíz 'walmart_proyecto' en su equipo.
+Paso 2: Abrir RStudio o la consola de R.
+Paso 3: Abrir y ejecutar completamente el script principal:
+        codigo/walmart_analysis.2.1ma (1).R
+
+* Nota de ejecución: El script incluye detección universal y automática del directorio 
+  de trabajo, por lo que NO es necesario configurar manualmente 'setwd()'.
+
+3. RESULTADOS GENERADOS
+-----------------------
+Una vez finalizada la ejecución, el script creará automáticamente la carpeta 'resultados/' 
+junto con sus subcarpetas ('graficos/' y 'binarios/'), exportando:
+- Reportes tabulares (.csv) con métricas, selecciones e inferencia.
+- Visualizaciones PNG de historia, diagnósticos, errores e intervalos.
+- Objetos de modelo entrenados y congelados (.rds).
+===============================================================================
+
+Por otro lado, se adjunta orden del proyecto, y como se imprimen los resultados;
+
+walmart_proyecto/                 <-- Carpeta raíz del proyecto 
+├── Instrucciones_de_uso.txt                     <-- Archivo con instrucciones para los evaluadores
+├── codigo/
+│   └── walmart_analysis.2.1ma (1).R <-- Script principal de R (detección universal de ruta)
+├── datos/
+│   ├── train.csv                 <-- Ventas históricas (Kaggle)
+│   ├── features.csv              <-- Datos de entorno (clima, combustible, MarkDowns)
+│   └── stores.csv                <-- Información de las 45 tiendas
+└── resultados/                    <-- CARPETA GENERADA AUTOMÁTICAMENTE AL EJECUTAR EL CÓDIGO
+    ├── binarios/                 <-- Modelos y estado de auditoría congelados (.rds)
+    │   ├── estado_auditoria.rds
+    │   └── sistema_congelado_antes_test.rds
+    ├── graficos/                 <-- Gráficos en formato PNG
+    │   ├── 01_historia_ventas.png
+    │   ├── 02_validacion.png
+    │   ├── 03_test_ventas.png
+    │   ├── 04_test_error.png
+    │   ├── 05_ols_diagnosticos.png
+    │   ├── 06_interpretabilidad.png
+    │   └── 07_intervalos_ejemplo.png
+    ├── auditoria_datos.csv
+    ├── bootstrap_bloques_moviles.csv
+    ├── calibracion_intervalos.csv
+    ├── coeficientes_lasso.csv
+    ├── controles_pipeline.csv
+    ├── cv_hiperparametros.csv
+    ├── cv_metricas_por_fold.csv
+    ├── datos_agregados_particion.csv
+    ├── departamentos_por_tienda_semana.csv
+    ├── diccionario_variables.csv
+    ├── faltantes_features.csv
+    ├── hiperparametros_elegidos.csv
+    ├── importancia_permutacion_validacion.csv
+    ├── inferencia_ols_cluster.csv
+    ├── ols_autocorrelacion.csv
+    ├── ols_columnas_alias.csv
+    ├── ols_diagnosticos.csv
+    ├── ols_vif.csv
+    ├── particiones_temporales.csv
+    ├── pdp_ice.csv
+    ├── resumen.csv
+    ├── seleccion_congelada.txt
+    ├── sessionInfo.txt
+    ├── test_modelo_y_baseline.csv
+    ├── test_predicciones.csv
+    ├── test_semanal.csv
+    ├── test_subgrupos.csv
+    ├── validacion_modelos.csv
+    └── validacion_predicciones.csv
